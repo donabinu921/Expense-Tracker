@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Expense Tracker</title>
-  <link rel="stylesheet" href="style1.css">
-</head>
-<body>
-  <h1>Expense Tracker</h1>
+  <head>
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <h1>Expense Tracker</h1>
 
-  <form id="expenseForm">
-    <label for="expenseDescription">Expense Description:</label>
-    <input type="text" id="expenseDescription" required>
+    <form id="expenseForm">
+      <div class="first label">
+        <label for="expenseDescription">Expense Description:</label>
+        <input type="text" id="expenseDescription" required />
+      </div>
+      <div class="second label">
+        <label for="expenseAmount">Expense Amount:</label>
+        <input type="number" id="expenseAmount" required />
+      </div>
 
-    <label for="expenseAmount">Expense Amount:</label>
-    <input type="number" id="expenseAmount" required>
+      <button type="submit">Add Expense</button>
+    </form>
 
-    <button type="submit">Add Expense</button>
-  </form>
+    <table id="expenseTable">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
 
-  <table id="expenseTable">
-    <thead>
-      <tr>
-        <th>Description</th>
-        <th>Amount</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </table>
-
-  <script src="script1.js">
-    
-  </script>
-</body>
+    <script src="script1.js"></script>
+  </body>
 </html>
