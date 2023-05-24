@@ -10,7 +10,7 @@ body {
 *,
 *::after,
 *::before {
-  box-sizing: inh\erit;
+  box-sizing: inherit;
 }
 
 body {
@@ -119,7 +119,7 @@ th {
   color: #f78d6a;
 }
 
-.delete-button {
+.delete-button, .edit-button {
   background-color: #282826;
   color: white;
   border: #f78d6a 1px solid;
@@ -128,6 +128,11 @@ th {
 }
 
 .delete-button:hover {
+    cursor: pointer;
+    background-color: #f78d6a;
+  }
+
+.edit-button:hover {
   cursor: pointer;
   background-color: #f78d6a;
 }
