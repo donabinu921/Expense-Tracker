@@ -21,6 +21,23 @@
 
       <h1>Currency Converter</h1>
 
+      <form id="currConverter">
+        <div class="firstLabel">
+          <label for="firstCurrency">Convert from:</label>
+          <input type="text" id="firstCurrency" required />
+        </div>
+        <div class="secondLabel">
+          <label for="secondCurrency">Convert to:</label>
+          <input type="number" id="secondCurrency" required />
+        </div>
+        <div class="thirdLabel">
+            <label for="amount">Convert to:</label>
+            <input type="number" id="amount" required />
+          </div>
+  
+        <button type="submit">Convert</button>
+      </form>
+      <span id="convertedAmount"></span>
     <script src="script2.js"></script>
 </body>
 </html>
