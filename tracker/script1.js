@@ -18,8 +18,8 @@ function formSubmitHandler(event) {
     document.getElementById("expenseDescription").value = "";
     document.getElementById("expenseAmount").value = "";
   } else {
-    let table = document.getElementById("expenseTable");
-    let row = table.insertRow(-1);
+    var tbody = document.querySelector("tbody");
+    let row = tbody.insertRow(-1);
     let descriptionCell = row.insertCell(0);
     let amountCell = row.insertCell(1);
     let dateCell = row.insertCell(2);
@@ -39,8 +39,8 @@ function formSubmitHandler(event) {
     editButton.classList.add("edit-button");
 
     deleteButton.addEventListener("click", function () {
-      let row = this.parentNode.parentNode;
-      table.deleteRow(row.rowIndex);
+      let row = this.parentNode;
+      tbody.deleteRow(row.rowIndex);
     });
 
     editButton.addEventListener("click", function () {
