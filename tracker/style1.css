@@ -23,7 +23,7 @@ body {
   padding: 40px;
 }
 
-span {
+span{
   color: #f78d6a;
   font-size: 20px;
   font-weight: 800;
@@ -104,13 +104,15 @@ h1 {
 }
 
 table {
-  width: 100%;
+  width: auto;
   border-collapse: collapse;
 }
 
 th,
 td {
-  padding: 10px;
+  /* padding: 10px 0px 10px 10px; */
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-align: left;
   border-bottom: 1px solid #a7bfac;
 }
@@ -136,3 +138,11 @@ th {
   cursor: pointer;
   background-color: #f78d6a;
 }
+
+#totalExpense{
+    font-weight: 400;
+    font-size: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+

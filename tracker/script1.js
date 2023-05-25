@@ -41,6 +41,7 @@ function formSubmitHandler(event) {
     deleteButton.addEventListener("click", function () {
       let row = this.parentNode;
       tbody.deleteRow(row.rowIndex);
+      
     });
 
     editButton.addEventListener("click", function () {
@@ -60,4 +61,15 @@ function formSubmitHandler(event) {
     document.getElementById("expenseDescription").value = "";
     document.getElementById("expenseAmount").value = "";
   }
+
+  // After inserting the initial expenses into the table
+let expenseRows = document.querySelectorAll("#expenseTable tbody tr");
+let totalExpense=0;
+expenseRows.forEach(function (row) {
+  let amount = parseFloat(row.cells[1].textContent);
+  totalExpense += amount;
+});
+
+// Update the total expense display
+document.getElementById("totalExpense").textContent = "Total Expense: Rs " + totalExpense.toFixed(2);
 }
