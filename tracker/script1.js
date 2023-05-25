@@ -1,8 +1,7 @@
-document
-  .getElementById("expenseForm")
-  .addEventListener("submit", formSubmitHandler);
+document.getElementById("expenseForm").addEventListener("submit", formSubmitHandler);
 
 let editingRow = null;
+let totalExpense = 0;
 
 function formSubmitHandler(event) {
   event.preventDefault();
@@ -12,13 +11,16 @@ function formSubmitHandler(event) {
   let date = new Date();
 
   if (editingRow) {
+    totalExpense -= parseFloat(editingRow.cells[1].textContent);
     editingRow.cells[0].textContent = description;
     editingRow.cells[1].textContent = amount.toFixed(2);
     editingRow = null;
     document.getElementById("expenseDescription").value = "";
     document.getElementById("expenseAmount").value = "";
+    totalExpense += amount; // Update total expense when editing an expense
+    updateTotalExpense();
   } else {
-    var tbody = document.querySelector("tbody");
+    let tbody = document.querySelector("tbody");
     let row = tbody.insertRow(-1);
     let descriptionCell = row.insertCell(0);
     let amountCell = row.insertCell(1);
@@ -39,9 +41,10 @@ function formSubmitHandler(event) {
     editButton.classList.add("edit-button");
 
     deleteButton.addEventListener("click", function () {
-      let row = this.parentNode;
+      let row = this.parentNode.parentNode;
+      totalExpense -= parseFloat(row.cells[1].textContent);
       tbody.deleteRow(row.rowIndex);
-      
+      updateTotalExpense();
     });
 
     editButton.addEventListener("click", function () {
@@ -60,16 +63,23 @@ function formSubmitHandler(event) {
 
     document.getElementById("expenseDescription").value = "";
     document.getElementById("expenseAmount").value = "";
-  }
 
-  // After inserting the initial expenses into the table
+    totalExpense += amount; // Update total expense when adding a new expense
+    updateTotalExpense();
+  }
+}
+
+// Function to update total expense
+function updateTotalExpense() {
+  document.getElementById("totalExpense").textContent = "Total Expense: Rs " + totalExpense.toFixed(2);
+}
+
+// Initial calculation of total expense
 let expenseRows = document.querySelectorAll("#expenseTable tbody tr");
-let totalExpense=0;
 expenseRows.forEach(function (row) {
   let amount = parseFloat(row.cells[1].textContent);
   totalExpense += amount;
 });
 
 // Update the total expense display
-document.getElementById("totalExpense").textContent = "Total Expense: Rs " + totalExpense.toFixed(2);
-}
+updateTotalExpense();
