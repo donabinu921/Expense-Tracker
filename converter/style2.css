@@ -47,11 +47,11 @@ ul li {
 
 a {
   text-decoration: none;
-  color: white;
+  color: #f78d6a;
 }
 
 a:hover {
-  color: #f78d6a;
+  color: white;
 }
 
 .nav {
