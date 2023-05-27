@@ -23,7 +23,7 @@ body {
   padding: 40px;
 }
 
-span{
+span {
   color: #f78d6a;
   font-size: 20px;
   font-weight: 800;
@@ -67,48 +67,48 @@ h1 {
 }
 
 #currConverter {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-  }
-  
-  .label {
-    display: flex;
-    justify-content: center;
-    padding: 20px 0px;
-  }
-  
-  #firstCurrency {
-    margin-left: 19px;
-  }
-  
-  #secondCurrency {
-    margin-left: 38px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
 
-  #amount {
-    margin-left: 15px;
-  }
-  
-  #currConverter button {
-    background-color: #f78d6a;
-    border: solid transparent;
-    border-radius: 5px;
-    color: white;
-    padding: 20px;
-    font-weight: 600;
-    margin: 20px 0px 40px 0px;
-  }
-  
-  #currConverter button:hover {
-    background-color: #282826;
-    border: #f78d6a solid;
-    cursor: pointer;
-  }
+.label {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px;
+}
 
-  #convertedAmount{
-    font-weight: 400;
-    font-size: 17px;
-    padding-bottom: 20px;
+#firstCurrency {
+  margin-left: 19px;
+}
+
+#secondCurrency {
+  margin-left: 38px;
+}
+
+#amount {
+  margin-left: 15px;
+}
+
+#currConverter button {
+  background-color: #f78d6a;
+  border: solid transparent;
+  border-radius: 5px;
+  color: white;
+  padding: 20px;
+  font-weight: 600;
+  margin: 20px 0px 40px 0px;
+}
+
+#currConverter button:hover {
+  background-color: #282826;
+  border: #f78d6a solid;
+  cursor: pointer;
+}
+
+#convertedAmount {
+  font-weight: 400;
+  font-size: 17px;
+  padding-bottom: 20px;
 }
